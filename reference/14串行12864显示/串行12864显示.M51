@@ -1,0 +1,270 @@
+BL51 BANKED LINKER/LOCATER V5.12                                                        09/09/2009  22:31:01  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.12, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, ¥Æ––12864œ‘ æ.obj TO ¥Æ––12864œ‘ æ RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  ¥Æ––12864œ‘ æ.obj (¥Æ––12864œ‘ _)
+
+
+LINK MAP OF MODULE:  ¥Æ––12864œ‘ æ (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         _DATA_GROUP_
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0037H     UNIT         ?PR?_SENDBYTE?¥Æ––12864œ‘ _
+            CODE    003AH     0035H     UNIT         ?PR?TEST?¥Æ––12864œ‘ _
+            CODE    006FH     002FH     UNIT         ?CO?¥Æ––12864œ‘ _
+            CODE    009EH     0027H     UNIT         ?PR?_DELAY?¥Æ––12864œ‘ _
+            CODE    00C5H     0023H     UNIT         ?PR?LCDINIT?¥Æ––12864œ‘ _
+            CODE    00E8H     0023H     UNIT         ?PR?_HZKDIS?¥Æ––12864œ‘ _
+            CODE    010BH     001FH     UNIT         ?PR?MAIN?¥Æ––12864œ‘ _
+            CODE    012AH     0010H     UNIT         ?PR?_WRITE_COM?¥Æ––12864œ‘ _
+            CODE    013AH     0010H     UNIT         ?PR?_WRITE_DATA?¥Æ––12864œ‘ _
+            CODE    014AH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   ¥Æ––12864œ‘ æ (?C_STARTUP)
+
+
+SEGMENT                                 DATA_GROUP 
+  +--> CALLED SEGMENT                 START    LENGTH
+-----------------------------------------------------
+?C_C51STARTUP                         -----    -----
+  +--> ?PR?MAIN?¥Æ––12864œ‘ _
+
+?PR?MAIN?¥Æ––12864œ‘ _                -----    -----
+  +--> ?PR?_DELAY?¥Æ––12864œ‘ _
+  +--> ?PR?LCDINIT?¥Æ––12864œ‘ _
+  +--> ?PR?TEST?¥Æ––12864œ‘ _
+
+?PR?_DELAY?¥Æ––12864œ‘ _              -----    -----
+  +--> ?PR?_WRITE_COM?¥Æ––12864œ‘ _
+
+?PR?_WRITE_COM?¥Æ––12864œ‘ _          -----    -----
+  +--> ?PR?_SENDBYTE?¥Æ––12864œ‘ _
+
+BL51 BANKED LINKER/LOCATER V5.12                                                      09/09/2009  22:31:01  PAGE 2
+
+
+?PR?LCDINIT?¥Æ––12864œ‘ _             -----    -----
+  +--> ?PR?_DELAY?¥Æ––12864œ‘ _
+  +--> ?PR?_WRITE_COM?¥Æ––12864œ‘ _
+
+?PR?TEST?¥Æ––12864œ‘ _                -----    -----
+  +--> ?PR?_DELAY?¥Æ––12864œ‘ _
+  +--> ?PR?_WRITE_COM?¥Æ––12864œ‘ _
+  +--> ?CO?¥Æ––12864œ‘ _
+  +--> ?PR?_HZKDIS?¥Æ––12864œ‘ _
+
+?PR?_HZKDIS?¥Æ––12864œ‘ _             0008H    0002H
+  +--> ?PR?_WRITE_DATA?¥Æ––12864œ‘ _
+  +--> ?PR?_DELAY?¥Æ––12864œ‘ _
+
+?PR?_WRITE_DATA?¥Æ––12864œ‘ _         -----    -----
+  +--> ?PR?_SENDBYTE?¥Æ––12864œ‘ _
+  +--> ?PR?_DELAY?¥Æ––12864œ‘ _
+
+
+
+SYMBOL TABLE OF MODULE:  ¥Æ––12864œ‘ æ (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:014AH         SEGMENT       ?C_C51STARTUP
+  I:000AH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:014DH         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0000H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:014AH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         92
+  C:014AH         LINE#         99
+  C:014CH         LINE#         100
+  C:014DH         LINE#         101
+  C:014EH         LINE#         102
+  C:0150H         LINE#         151
+  C:0153H         LINE#         155
+BL51 BANKED LINKER/LOCATER V5.12                                                      09/09/2009  22:31:01  PAGE 3
+
+
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        ¥Æ––12864œ‘ _
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:010BH         PUBLIC        Main
+  C:013AH         PUBLIC        _write_data
+  B:00A0H.4       PUBLIC        CH
+  D:00A8H         PUBLIC        IE
+  B:00A0H.5       PUBLIC        CS
+  D:00B8H         PUBLIC        IP
+  C:003AH         PUBLIC        Test
+  B:00A0H.7       PUBLIC        SCLK
+  C:012AH         PUBLIC        _write_com
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0012H         PUBLIC        _sendbyte
+  B:00A0H.6       PUBLIC        SID
+  D:00C8H         PUBLIC        T2CON
+  C:00C5H         PUBLIC        lcdinit
+  C:00E8H         PUBLIC        _hzkdis
+  C:00A5H         PUBLIC        _delay
+  B:00A0H.2       PUBLIC        RST
+  D:00D0H         PUBLIC        PSW
+  C:00A1H         SYMBOL        L?0032
+  -------         PROC          L?0031
+  -------         ENDPROC       L?0031
+  C:00A1H         SYMBOL        L?0032
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:00A5H         LINE#         24
+  C:00A5H         LINE#         25
+  C:00A5H         LINE#         27
+  C:00AFH         LINE#         28
+  C:00C4H         LINE#         29
+  -------         ENDPROC       _DELAY
+  -------         PROC          L?0030
+  -------         ENDPROC       L?0030
+  -------         PROC          _SENDBYTE
+  D:0007H         SYMBOL        zdata
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0012H         LINE#         37
+  C:0012H         LINE#         38
+  C:0012H         LINE#         40
+  C:0015H         LINE#         41
+  C:0015H         LINE#         42
+  C:0024H         LINE#         43
+  C:0024H         LINE#         44
+  C:0026H         LINE#         45
+BL51 BANKED LINKER/LOCATER V5.12                                                      09/09/2009  22:31:01  PAGE 4
+
+
+  C:0028H         LINE#         47
+  C:0028H         LINE#         48
+  C:002AH         LINE#         49
+  C:002AH         LINE#         50
+  C:002CH         LINE#         51
+  C:002EH         LINE#         52
+  C:0039H         LINE#         53
+  -------         ENDPROC       _SENDBYTE
+  -------         PROC          _WRITE_COM
+  D:0003H         SYMBOL        cmdcode
+  C:012AH         LINE#         61
+  C:012CH         LINE#         62
+  C:012CH         LINE#         63
+  C:012EH         LINE#         64
+  C:0130H         LINE#         65
+  C:0130H         LINE#         66
+  C:0133H         LINE#         67
+  -------         ENDPROC       _WRITE_COM
+  -------         PROC          _WRITE_DATA
+  D:0003H         SYMBOL        Dispdata
+  C:013AH         LINE#         76
+  C:013CH         LINE#         77
+  C:013CH         LINE#         78
+  C:013EH         LINE#         79
+  C:0140H         LINE#         80
+  C:0140H         LINE#         81
+  C:0143H         LINE#         82
+  -------         ENDPROC       _WRITE_DATA
+  -------         PROC          LCDINIT
+  C:00C5H         LINE#         91
+  C:00C5H         LINE#         92
+  C:00C5H         LINE#         93
+  C:00C7H         LINE#         94
+  C:00CEH         LINE#         95
+  C:00D0H         LINE#         96
+  C:00D7H         LINE#         97
+  C:00D9H         LINE#         98
+  C:00DCH         LINE#         99
+  C:00E1H         LINE#         100
+  -------         ENDPROC       LCDINIT
+  -------         PROC          _HZKDIS
+  D:0008H         SYMBOL        s
+  C:00E8H         LINE#         109
+  C:00ECH         LINE#         110
+  C:00ECH         LINE#         111
+  C:00FAH         LINE#         112
+  C:00FAH         LINE#         113
+  C:00FDH         LINE#         114
+  C:0105H         LINE#         115
+  C:0108H         LINE#         116
+  C:010AH         LINE#         117
+  -------         ENDPROC       _HZKDIS
+  -------         PROC          TEST
+  C:003AH         LINE#         125
+  C:003AH         LINE#         126
+  C:003AH         LINE#         127
+  C:003CH         LINE#         128
+BL51 BANKED LINKER/LOCATER V5.12                                                      09/09/2009  22:31:01  PAGE 5
+
+
+  C:003FH         LINE#         129
+  C:0044H         LINE#         130
+  C:004BH         LINE#         131
+  C:0050H         LINE#         132
+  C:0057H         LINE#         133
+  C:005CH         LINE#         134
+  C:0063H         LINE#         135
+  C:0068H         LINE#         136
+  -------         ENDPROC       TEST
+  -------         PROC          MAIN
+  C:010BH         LINE#         146
+  C:010BH         LINE#         147
+  C:010BH         LINE#         148
+  C:010DH         LINE#         149
+  C:0114H         LINE#         150
+  C:0117H         LINE#         151
+  C:011EH         LINE#         152
+  C:011EH         LINE#         153
+  C:011EH         LINE#         154
+  C:0121H         LINE#         155
+  C:0128H         LINE#         156
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        ¥Æ––12864œ‘ _
+
+Program Size: data=11.0 xdata=0 code=342
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
